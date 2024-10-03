@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket List</title>
+</head>
+<body>
+    <h1>All Tickets</h1>
+    <a href="{% url 'create_ticket' %}">Create Ticket</a>
+    <ul>
+    {% for ticket in tickets %}
+        <li>
+            <a href="{% url 'update_ticket' ticket.id %}">{{ ticket.title }}</a> - {{ ticket.status }}
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
